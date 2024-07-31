@@ -1,0 +1,2880 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MstSopService</name>
+    </assembly>
+    <members>
+        <member name="T:MstSopService.Caches.MstCacheService">
+            <summary>
+            缓存类
+            </summary>
+        </member>
+        <member name="M:MstSopService.Caches.MstCacheService.ZAdd(System.String,System.ValueTuple{System.Decimal,System.Object}[])">
+            <summary>
+            向有序集合添加一个或多个成员
+            </summary>
+            <param name="key"></param>
+            <param name="scoreMembers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Caches.MstCacheService.ZRevRange(System.String,System.Int64,System.Int64)">
+            <summary>
+            获取有序集合数据(高到低)
+            </summary>
+            <param name="key"></param>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Caches.MstCacheService.ZRange(System.String,System.Int64,System.Int64)">
+            <summary>
+            获取有序集合数据(低到高)
+            </summary>
+            <param name="key"></param>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Caches.MstCacheService.ZRange(System.String,System.String[])">
+            <summary>
+            向有序集合移除一个或多个成员
+            </summary>
+            <param name="key"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Caches.MstCacheService.SAdd(System.String,System.Object)">
+            <summary>
+            向无序集合添加数据
+            </summary>
+            <typeparam name="V"></typeparam>
+            <param name="key"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:MstSopService.Controllers.DBTakePrecedenceController.CreateEntity(System.String,System.String)">
+            <summary>
+            创建实体
+            </summary>
+            <param name="tblName">数据库表名</param>
+            <param name="savePath">存放路径</param>
+            <returns>返回Http状态码</returns>
+        </member>
+        <member name="T:MstSopService.Controllers.DictController">
+            <summary>
+            本地字典API
+            </summary>
+        </member>
+        <member name="M:MstSopService.Controllers.DictController.GetDict(System.String)">
+            <summary>
+            获取字典信息
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.DictController.GetDicts(MstSopService.DTO.DictsInput)">
+            <summary>
+            获取字典信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.DictController.GetDictsHierarchy(MstSopService.DTO.DictsInput)">
+            <summary>
+            获取字典信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MstSopService.Controllers.FileManagementController">
+            <summary>
+            文件管理API
+            </summary>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.GetArchitectureData">
+            <summary>
+            获取文件管理Tree架构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.Save(System.Collections.Generic.List{MstSopService.Entity.FilesShare})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.FilesShareRename(MstSopService.DTO.FilesShareRenameInput)">
+            <summary>
+            重命名文件/文件夹
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.FilesShareDelete(MstSopService.DTO.IdxsPublicInput)">
+            <summary>
+            删除文件/文件夹
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.FilesShareCopy(MstSopService.DTO.FilesShareCopyInput)">
+            <summary>
+            Copy文件/文件夹
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.FilesShareMoveTo(MstSopService.DTO.FilesShareMoveToInput)">
+            <summary>
+            Move to文件/文件夹
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.FileManagementController.ChangeFilePermissions(MstSopService.DTO.ChangeFilePermissionsInput)">
+            <summary>
+            修改文件夹权限
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MstSopService.Controllers.MinioController">
+            <summary>
+            Minio文件操作
+            </summary>
+        </member>
+        <member name="M:MstSopService.Controllers.MinioController.Upload(Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            使用Minio上传文件，返回Minio地址
+            </summary>
+            <param name="ifc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.MinioController.UploadWithCover(Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            使用Minio上传文件，返回Minio地址,带封面图
+            </summary>
+            <param name="ifc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.MinioController.Download(System.String)">
+            <summary>
+            使用Minio下载，返回文件流
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MstSopService.Controllers.OperationSOPController">
+            <summary>
+            操作SOPAPI
+            </summary>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.ObtainSOPData(MstDBComman.Models.QueryDescriptor)">
+            <summary>
+            获取SOP数据
+            </summary>
+            <param name="model">筛选条件和排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Save(MstSopService.DTO.SopOrderDetailsDTO)">
+            <summary>
+            保存SOP数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Modify(MstSopService.DTO.SopOrderDetailsDTO)">
+            <summary>
+            修改SOP数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.DELETE(MstSopService.DTO.IdxsPublicInput)">
+            <summary>
+            删除SOP数据
+            </summary>
+            <param name="input">筛选条件和排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Get(System.Int32)">
+            <summary>
+            获取SOP数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.ObtainCorrespondingAttachments(System.String)">
+            <summary>
+            获取框架图对应附件信息
+            </summary>
+            <param name="attrId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.DeleteContentVersion(MstSopService.DTO.IdPublicInput)">
+            <summary>
+            删除内容版本
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.UploadContentVersion(MstSopService.DTO.SopOrderContentTextDTO)">
+            <summary>
+            上传内容版本
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.RevokeSubmit(MstSopService.DTO.IdPublicInput)">
+            <summary>
+            撤销提交
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Preview(MstSopService.DTO.SopOrderDetailsDTO)">
+            <summary>
+            预览SOP数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.ApprovalResults(MstSopService.DTO.SopOrderApproverRecordDTO)">
+            <summary>
+            审批结果
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Publish(MstSopService.DTO.PublishInput)">
+            <summary>
+            发布
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.DeptOrPersonnel">
+            <summary>
+            获取对应人员信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.DeptOrFreightRatePersonnel">
+            <summary>
+            获取对应人员信息(运价人员)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.ObtainDestinationCountryData(System.String)">
+            <summary>
+            获取目的国数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.RegenerateVersion(System.Int32)">
+            <summary>
+            重新生成版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.OperatorsSave(MstSopService.DTO.SopOrderDetailsDTO)">
+            <summary>
+            操作人员重新保存SOP数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.OperatorsModify(MstSopService.DTO.SopOrderDetailsDTO)">
+            <summary>
+            操作人员修改SOP数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.OperatorsApprovalResults(MstSopService.DTO.SopOrderApproverRecordDTO)">
+            <summary>
+            操作人员修改审批结果
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.CopyOrderData(MstSopService.DTO.IdPublicInput)">
+            <summary>
+            复制数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.ObtainDropdownDataForSeaFreightImports">
+            <summary>
+            获取海运进口下拉数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.OperationSOPController.Test">
+            <summary>
+            Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MstSopService.Controllers.ShippingFrameDlagramController">
+            <summary>
+            运输框架图API
+            </summary>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.GetFrameData">
+            <summary>
+            获取全部运输框架数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.Get(System.Int32)">
+            <summary>
+            获取单条运输框架数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.Save(MstSopService.DTO.SopBaseDTO)">
+            <summary>
+            保存单条运输框架数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.Modify(MstSopService.DTO.SopBaseDTO)">
+            <summary>
+            修改单条运输框架数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.DELETE(MstSopService.DTO.IdxsPublicInput)">
+            <summary>
+            删除运输框架数据
+            </summary>
+            <param name="input">筛选条件和排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.GetMappingRelationship">
+            <summary>
+            获取对应关系
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Controllers.ShippingFrameDlagramController.JointQuery(MstSopService.DTO.ArrayInput)">
+            <summary>
+            联合查询
+            </summary>
+            <param name="input">筛选条件和排序</param>
+            <returns></returns>
+        </member>
+        <member name="P:MstSopService.DTO.DictsInput.OwerType">
+            <summary>
+            10:空运   20:海运
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.PublishInput.IsPublish">
+            <summary>
+            Desc:是否发布
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.DTO.PublishInput.VisibleMember">
+            <summary>
+            Desc:发布选择的人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.DTO.PublishInput.PublishTime">
+            <summary>
+            Desc:发布时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.DTO.PublishInput.PublishMember">
+            <summary>
+            发布人员
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.PublishInput.PublishMemberName">
+            <summary>
+            发布人员
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderApproverRecordDTO.ApproverName">
+            <summary>
+            Desc:审批用户-->创建用户
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.PreAlertList">
+            <summary>
+            Pa联系人
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.OverseasAgentContactList">
+            <summary>
+            海外代理商联系方式
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.GeneratedFiles">
+            <summary>
+            提交后生成文件
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.SopOrderApproverRecords">
+            <summary>
+            审批记录
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.PublishMsg">
+            <summary>
+            发布信息
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.ContactInformations">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.Exports">
+            <summary>
+            出口信息
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.CarrierList">
+            <summary>
+            船信息
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderDetailsDTO.OrderAttachments">
+            <summary>
+            sopOrder附件
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderListDTO.PublishMsg">
+            <summary>
+            发布信息
+            </summary>
+        </member>
+        <member name="P:MstSopService.DTO.SopOrderListDTO.SopOrderApproverRecords">
+            <summary>
+            审批记录
+            </summary>
+        </member>
+        <member name="T:MstSopService.Entity.Dictdef">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Idx">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Orgid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Sysid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Rccode">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Dictid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Cname">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Ename">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictdef.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.Dictinfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Idx">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Orgid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Sysid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Rccode">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Dictid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Code">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Cname">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Ename">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr1">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr2">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr3">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr4">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr5">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr6">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr7">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr8">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.Dictinfo.Gcattr9">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.FileManage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Idx">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.RelationId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.RelationTableName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.FileType">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.FilePath">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.FileName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.FileExt">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.PreId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FileManage.RelationCode">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.FilesShare">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Pid">
+            <summary>
+            Desc:父节点
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.FileName">
+            <summary>
+            Desc:文件/文件夹名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.FileNameen">
+            <summary>
+            Desc:文件/文件夹名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Type">
+            <summary>
+            Desc:类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Extended">
+            <summary>
+            Desc:扩展名
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.IsPrivate">
+            <summary>
+            Desc:是否私有
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.FilePath">
+            <summary>
+            Desc:文件路径
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.FilesShare.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Idx">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Departmentid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.SopName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.SopNameen">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Pid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Type">
+            <summary>
+            Desc:Type
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.AttrId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Orderid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.IsShow">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.SopType">
+            <summary>
+            Desc:内部显示附件链接，外部显示富文本内容
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Detail">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Gcattr1">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Gcattr2">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Gcattr3">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Gcattr4">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Gcattr5">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopBase.RelationCode">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopContactList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.SopBaseId">
+            <summary>
+            Desc:树节点ID
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Carrier">
+            <summary>
+            Desc:运输公司
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Office">
+            <summary>
+            Desc:办公室
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Route">
+            <summary>
+            Desc:航线
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Destination">
+            <summary>
+            Desc:目的国
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Role">
+            <summary>
+            Desc:角色
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.TitleDesc">
+            <summary>
+            Desc:岗位描述
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.ContactName">
+            <summary>
+            Desc:联系人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Tel">
+            <summary>
+            Desc:联系方式
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Mobile">
+            <summary>
+            Desc:手机号
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Email">
+            <summary>
+            Desc:邮箱地址
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopContactList.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.SopCode">
+            <summary>
+            Desc:SOP单号
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.OwerType">
+            <summary>
+            Desc:所属类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.BizType">
+            <summary>
+            Desc:业务类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.CustomerName">
+            <summary>
+            Desc:客户名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.ConsigneeEn">
+            <summary>
+            Desc:cnee(英文)
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.ConsigneeCh">
+            <summary>
+            Desc:cnee(中文)
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.ShipperEn">
+            <summary>
+            Desc:shipper（英文）
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.ShipperCh">
+            <summary>
+            Desc:shipper（中文）
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Salesid">
+            <summary>
+            Desc:销售人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.EId">
+            <summary>
+            Desc:运价人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.CsId">
+            <summary>
+            Desc:操作人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Incoterm">
+            <summary>
+            Desc:贸易条款
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.PayType">
+            <summary>
+            Desc:结算类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Status">
+            <summary>
+            Desc:状态
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.HblOrderType">
+            <summary>
+            Desc:hbl_order_type
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.IsPublish">
+            <summary>
+            Desc:是否发布
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.VisibleMember">
+            <summary>
+            Desc:发布选择的人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.PublishTime">
+            <summary>
+            Desc:发布时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.PublishMember">
+            <summary>
+            Desc:发布人员
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.Flag">
+            <summary>
+            Desc:标记
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.PrimaryId">
+            <summary>
+            Desc:原id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrder.ModifySopCode">
+            <summary>
+            Desc:修改单号
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderApproverRecord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.Departmentid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.ApprovalStatus">
+            <summary>
+            Desc:审批状态
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.ApprovalNode">
+            <summary>
+            Desc:审批节点
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.SopOrderId">
+            <summary>
+            Desc:sop_order对应id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.Approver">
+            <summary>
+            Desc:审批用户-->创建用户
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.ApprovalTime">
+            <summary>
+            Desc:审批时间-->创建时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderApproverRecord.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderAttachment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.SopOrderId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Type">
+            <summary>
+            Desc:type
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.FileNamePath">
+            <summary>
+            Desc:文件名或者链接地址
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MstSopService.Entity.SopOrderAttachment.FilePath" -->
+        <member name="P:MstSopService.Entity.SopOrderAttachment.ValidBegin">
+            <summary>
+            Desc:有效期开始时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.ValidEnd">
+            <summary>
+            Desc:有效期结束时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.FileType">
+            <summary>
+            Desc:文档类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.AttachmentType">
+            <summary>
+            Desc:附件类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttachment.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Departmentid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.AttrName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.AttrNameen">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Pid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Dictid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderAttribute.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderContact">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.SopOrderId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.ContactName">
+            <summary>
+            Desc:联系人名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Title">
+            <summary>
+            Desc:职位
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Dept">
+            <summary>
+            Desc:部门
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Email">
+            <summary>
+            Desc:邮箱
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Tel">
+            <summary>
+            Desc:联系电话
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Gcattr5">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContact.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderContentText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Departmentid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.SopOrderId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.FileName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.FilePath">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.IsDelete">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderContentText.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderIn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.SopOrderId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.OpMode">
+            <summary>
+            Desc:操作模式
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.InType">
+            <summary>
+            Desc:进口模式
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Dest">
+            <summary>
+            Desc:目的地
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.DeclarationMethod">
+            <summary>
+            Desc:申报方式
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.ContactWindow">
+            <summary>
+            Desc:联系窗口
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.Carrier">
+            <summary>
+            Desc:船公司名
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderIn.GoodsType">
+            <summary>
+            Desc:货物类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.SopOrderId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.GoodsType">
+            <summary>
+            Desc:货物类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Dg">
+            <summary>
+            Desc:dg申报
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.OpMode">
+            <summary>
+            Desc:操作模式
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Origin">
+            <summary>
+            Desc:起运地
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Declaration">
+            <summary>
+            Desc:申报方
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.DestContury">
+            <summary>
+            Desc:目的国
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.DgSpecialPackging">
+            <summary>
+            Desc:危标挂网
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.GoodsTypeHierarchical">
+            <summary>
+            Desc:货物类型对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.OpModeHierarchical">
+            <summary>
+            Desc:操作模式对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.OriginHierarchical">
+            <summary>
+            Desc:起运地对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOut.DestConturyHierarchical">
+            <summary>
+            Desc:目的国对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderOutCarrier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.SopOrderOutId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Carrier">
+            <summary>
+            Desc:船公司名
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.PriceType">
+            <summary>
+            Desc:价格类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.Modifydate">
+            <summary>
+            Desc:修改时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderOutCarrier.CarrierHierarchical">
+            <summary>
+            Desc:船公司名对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopOrderTrailerDeclaration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Id">
+            <summary>
+            Desc:内码
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Companyid">
+            <summary>
+            Desc:集团码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Departmentid">
+            <summary>
+            Desc:公司码
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.SopOrderId">
+            <summary>
+            Desc:sop_order_id
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.RequirementType">
+            <summary>
+            Desc:需求类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Origin">
+            <summary>
+            Desc:起运地
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.PickUpName">
+            <summary>
+            Desc:提货地名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.PickUpAddr">
+            <summary>
+            Desc:提货地址
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.PickUpContact">
+            <summary>
+            Desc:联系人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.IsWeigh">
+            <summary>
+            Desc:是否过磅
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.TrailerRequirements">
+            <summary>
+            Desc:拖车要求
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.DeclarationMethod">
+            <summary>
+            Desc:报关类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Gcattr1">
+            <summary>
+            Desc:属性1
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Gcattr2">
+            <summary>
+            Desc:属性2
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Gcattr3">
+            <summary>
+            Desc:属性3
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Gcattr4">
+            <summary>
+            Desc:属性4
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Gcattr5">
+            <summary>
+            Desc:属性5
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Remark">
+            <summary>
+            Desc:备注
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Createuser">
+            <summary>
+            Desc:录入人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Createdate">
+            <summary>
+            Desc:录入时间
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Modifier">
+            <summary>
+            Desc:修改人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.OriginHierarchical">
+            <summary>
+            Desc:起运地对应字段
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopOrderTrailerDeclaration.CustomsType">
+            <summary>
+            Desc:报关类型
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="T:MstSopService.Entity.SopPaContact">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Companyid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Departmentid">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.SopOrderId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Email">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Remark">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Createuser">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Createdate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Modifier">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Modifydate">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:MstSopService.Entity.SopPaContact.Flag">
+            <summary>
+            Desc:1:pa联系人，0:海外代理联系人
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="M:MstSopService.Extensions.AutoMapper.AutoMapperSetup.AddAutoMapperSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            扩展方法
+            </summary>
+            <param name="services">服务容器</param>
+        </member>
+        <member name="T:MstSopService.MstExeResult">
+            <summary>
+            返回可被其他服务调用的对象，并且返回的对象可以转换为IActionResult
+            作者：Steven
+            </summary>
+        </member>
+        <member name="M:MstSopService.MstExeResult.Success(System.Object,System.String[],System.String[])">
+            <summary>
+            返回数据塑形
+            </summary>
+            <param name="rtnData">返回的数据</param>
+            <param name="noUiprop">不给前端看的字段</param>
+            <param name="uiprop">给前端看的字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Service.OperationSOPService.FixImgTags(System.String)">
+            <summary>
+            格式化Img标签
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Service.OperationSOPService.RGBStringToHex(System.String)">
+            <summary>
+            转换Rgb
+            </summary>
+            <param name="rgb"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:MstSopService.Tools.HttpTool.ObtainCodeNamesData">
+            <summary>
+            获取所有在职人员、和组织架构码名信息
+            </summary>
+        </member>
+        <member name="M:MstSopService.Tools.HttpTool.ObtainThenameOfSSSShippingCompany">
+            <summary>
+            获取SSS船公司名信息
+            </summary>
+        </member>
+        <member name="M:MstSopService.Tools.HttpTool.ObtainDeptOrPersonnel(System.String)">
+            <summary>
+            获取部门人员信息
+            </summary>
+        </member>
+        <member name="M:MstSopService.Tools.HttpTool.ObtainDeptOrFreightRatePersonnel(System.String)">
+            <summary>
+            获取人员信息
+            </summary>
+        </member>
+        <member name="T:MstSopService.Tools.VariableModelTool">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MstSopService.Tools.VariableModelTool.#ctor(MstDB.IDatabase,AutoMapper.IMapper,MstSopService.Caches.MstCacheService)">
+            <summary>
+            构造器
+            </summary>
+            <param name="database">数据库</param>
+            <param name="mapper">IMapper实例</param>
+        </member>
+        <member name="M:MstSopService.Tools.VariableModelTool.MysqlStr(System.Collections.Generic.List{MstDBComman.Models.QueryCondition})">
+            <summary>
+            查询参数数据变成SQL语句字符串
+            </summary>
+            <param name="Conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MstSopService.Tools.VariableModelTool.UpdateList``2(System.Collections.Generic.List{``0},System.Func{``0,System.Int64},System.Collections.Generic.List{``1},System.Func{``1,System.Int64},System.Func{``1,System.Boolean},System.Func{System.Collections.Generic.List{``1},System.Collections.Generic.List{``0}},System.Func{System.Collections.Generic.List{``0},``1,``0},System.Collections.Generic.List{System.String})">
+            <summary>
+            更新列表
+            </summary>
+            <typeparam name="TOfEntity">实体类型</typeparam>
+            <typeparam name="TOfModel">model类型</typeparam>
+            <param name="entityList">实体列表</param>
+            <param name="idEntity">实体条件</param>
+            <param name="modeles">model列表</param>
+            <param name="idModel">model条件</param>
+            <param name="whereUpdateModel">更新条件</param>
+            <param name="entityCreationCallBack">创建Func</param>
+            <param name="entityUpdateCallBack">更新Func</param>
+            <param name="noNew">不更新的列</param>
+        </member>
+    </members>
+</doc>

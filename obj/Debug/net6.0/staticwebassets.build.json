@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0amS5TIMRwQfFqD+RP5rB1QThb2YdXmK8VcJBKMsm7A=",
+  "Source": "MstSopService",
+  "BasePath": "_content/MstSopService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
